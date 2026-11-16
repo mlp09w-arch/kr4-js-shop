@@ -1,7 +1,7 @@
 "use strict";
 
 // Общий источник данных для каталога, страницы товара и корзины.
-// Комплекты отличаются от самой лампы наличием LED-лампочки.
+// Новым моделям даны отдельные id; старые комплекты удалены из каталога.
 const products = [
   {
     id: 1,
@@ -11,7 +11,7 @@ const products = [
     isAvailable: true,
     image: "lamp-green",
     description: "Зелёная лампа с регулируемым кронштейном для рабочего стола.",
-    isLedKit: false,
+    isNew: false,
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const products = [
     image: "lamp-beige",
     description:
       "Бежевый тканевый абажур и золотистое основание для уютного вечера.",
-    isLedKit: false,
+    isNew: false,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const products = [
     image: "lamp-black",
     description:
       "Чёрная настольная лампа со сдержанным силуэтом и тканевым абажуром.",
-    isLedKit: false,
+    isNew: false,
   },
   {
     id: 4,
@@ -43,49 +43,50 @@ const products = [
     isAvailable: true,
     image: "lamp-bird",
     description: "Декоративная лампа с фигуркой птицы и резным плафоном.",
-    isLedKit: false,
+    isNew: false,
   },
   {
-    id: 5,
-    title: "Лайм — комплект LED",
+    id: 9,
+    title: "Кристалл",
+    category: "classic",
+    price: 6490,
+    isAvailable: true,
+    image: "lamp-crystal",
+    description:
+      "Белый абажур, изогнутая светлая ножка и прозрачные декоративные подвески.",
+    isNew: true,
+  },
+  {
+    id: 10,
+    title: "Графит",
     category: "work",
-    price: 3980,
+    price: 2990,
     isAvailable: true,
-    image: "lamp-green",
-    description:
-      "Рабочая лампа Лайм в комплекте с LED-лампочкой. Готова к первому включению.",
-    isLedKit: true,
+    image: "lamp-graphite",
+    description: "Чёрная рабочая лампа с гибкой ножкой и круглым основанием.",
+    isNew: true,
   },
   {
-    id: 6,
-    title: "Классика — комплект LED",
-    category: "classic",
-    price: 6480,
-    isAvailable: true,
-    image: "lamp-beige",
-    description: "Лампа Классика и LED-лампочка в одном комплекте.",
-    isLedKit: true,
-  },
-  {
-    id: 7,
-    title: "Нуар — комплект LED",
-    category: "classic",
-    price: 6980,
-    isAvailable: true,
-    image: "lamp-black",
-    description:
-      "Лампа Нуар в комплекте с LED-лампочкой для домашнего освещения.",
-    isLedKit: true,
-  },
-  {
-    id: 8,
-    title: "Лесная птица — комплект LED",
+    id: 11,
+    title: "Янтарь",
     category: "decor",
-    price: 9480,
+    price: 7490,
+    isAvailable: true,
+    image: "lamp-amber",
+    description:
+      "Округлое основание с древесным рисунком и фактурный абажур с тёплым свечением.",
+    isNew: true,
+  },
+  {
+    id: 12,
+    title: "Банкир",
+    category: "classic",
+    price: 7990,
     isAvailable: false,
-    image: "lamp-bird",
-    description: "Декоративная лампа Лесная птица в комплекте с LED-лампочкой.",
-    isLedKit: true,
+    image: "lamp-banker",
+    description:
+      "Зелёный вытянутый плафон, золотистая ножка и выключатель-цепочка.",
+    isNew: true,
   },
 ];
 

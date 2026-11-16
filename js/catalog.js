@@ -3,8 +3,8 @@
 function createProductCard(product) {
   const card = createElement("article", "product-card");
   card.dataset.productId = product.id;
-  if (product.isLedKit)
-    card.append(createElement("span", "product-card__badge", "Комплект LED"));
+  if (product.isNew)
+    card.append(createElement("span", "product-card__badge", "Новинка"));
   const photoLink = createElement("a");
   photoLink.href = `product.html?id=${product.id}`;
   photoLink.append(createProductImage(product, "product-card__image"));
@@ -171,7 +171,7 @@ function renderProductDetail() {
     createElement(
       "p",
       "",
-      "Комплект поставки указан отдельно для каждой позиции.",
+      "Сравните модели и выберите лампу для своего интерьера.",
     ),
   );
   const wrapper = createElement("div", "table-wrapper");
@@ -197,10 +197,6 @@ function renderProductDetail() {
   const specs = [
     ["Модель", product.title],
     ["Стиль", categoryNames[product.category]],
-    [
-      "Комплект",
-      product.isLedKit ? "Лампа и LED-лампочка" : "Лампа без лампочки",
-    ],
     ["Наличие", product.isAvailable ? "В наличии" : "Нет в наличии"],
   ];
   // Сохраняем известные характеристики исходной лампы, не придумываем параметры других.

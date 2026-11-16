@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-11-16T16:12:48.353Z",
+  "testedAt": "2026-11-16T16:45:03.911Z",
   "environment": "Headless Chromium, local HTTP server",
   "baseUrl": "http://127.0.0.1:8044/",
   "total": 93,
@@ -172,22 +172,22 @@
       "detail": ""
     },
     {
-      "name": "Product 5 matches data",
+      "name": "Product 9 matches data",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "Product 6 matches data",
+      "name": "Product 10 matches data",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "Product 7 matches data",
+      "name": "Product 11 matches data",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "Product 8 matches data",
+      "name": "Product 12 matches data",
       "passed": true,
       "detail": ""
     },

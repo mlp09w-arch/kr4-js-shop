@@ -42,7 +42,7 @@ const originalIds = await page.evaluate(() =>
 await page.locator("#search").fill("  лАЙМ ");
 check(
   "Search ignores case and edge spaces",
-  (await page.locator("[data-products] .product-card").count()) === 2,
+  (await page.locator("[data-products] .product-card").count()) === 1,
 );
 await page.locator("#category").selectOption("classic");
 check(
@@ -68,7 +68,7 @@ check(
     .locator("[data-products] .product-card")
     .evaluateAll((nodes) =>
       nodes.map((n) => n.dataset.productId).join(","),
-    )) === "7,6,2",
+    )) === "9,2",
 );
 await page.locator("#sort").selectOption("price-asc");
 check(
@@ -77,7 +77,7 @@ check(
     .locator("[data-products] .product-card")
     .evaluateAll((nodes) =>
       nodes.map((n) => n.dataset.productId).join(","),
-    )) === "2,6,7",
+    )) === "2,9",
 );
 await page.locator("#sort").selectOption("title");
 check(
@@ -239,7 +239,7 @@ check(
       .locator("[data-open-modal]")
       .evaluate((n) => n === document.activeElement)),
 );
-for (const id of [1, 2, 3, 4, 5, 6, 7, 8]) {
+for (const id of [1, 2, 3, 4, 9, 10, 11, 12]) {
   await goto(`product.html?id=${id}`);
   check(
     `Product ${id} matches data`,
@@ -270,6 +270,20 @@ for (const width of [360, 768, 1024, 1440]) {
       () => document.documentElement.scrollWidth > innerWidth + 1,
     );
     check(`${file}: no page overflow at ${width}px`, !overflow);
+    // Изображения за пределами экрана загружаются лениво. Для проверки
+    // файлов явно запускаем загрузку и ждём декодирования, а не таймер.
+    await page.locator("img").evaluateAll((images) =>
+      Promise.all(
+        images.map(async (image) => {
+          image.loading = "eager";
+          try {
+            await image.decode();
+          } catch {
+            /* broken проверяется ниже */
+          }
+        }),
+      ),
+    );
     const broken = await page
       .locator("img")
       .evaluateAll(
@@ -327,6 +341,7 @@ await page.evaluate(() =>
       { productId: 1, quantity: 4 },
       { productId: 3, quantity: 1 },
       { productId: 999, quantity: 1 },
+      { productId: 5, quantity: 1 },
       { productId: 2, quantity: -1 },
       { productId: 4, quantity: 1.5 },
       null,
