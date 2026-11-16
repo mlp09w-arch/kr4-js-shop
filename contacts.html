@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Адрес, телефон, время работы и обратная связь магазина настольных ламп СветДом."
+    />
+    <title>Контакты - СветДом</title>
+    <link rel="icon" type="image/webp" href="images/lamp-green-360.webp" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/data.js" defer=""></script>
+    <script src="js/cart.js" defer=""></script>
+    <script src="js/catalog.js" defer=""></script>
+    <script src="js/modal.js" defer=""></script>
+    <script src="js/validation.js" defer=""></script>
+    <script src="js/main.js" defer=""></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html">СветДом</a>
+        <button class="menu-toggle" type="button" popovertarget="mobile-menu">
+          <span aria-hidden="true">☰</span>
+          Меню
+        </button>
+        <nav class="site-nav site-nav--desktop" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="index.html">Главная</a></li>
+            <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+            <li>
+              <a class="site-nav__link" href="product.html">Лампа «Лайм»</a>
+            </li>
+            <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+            <li>
+              <a
+                class="site-nav__link site-nav__link--active"
+                href="contacts.html"
+                aria-current="page"
+              >
+                Контакты
+              </a>
+            </li>
+            <li>
+              <a class="site-nav__link" href="cart.html"
+                >Корзина
+                <span data-cart-count="" aria-label="Количество товаров"
+                  >0</span
+                ></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <noscript
+        >Для поиска, корзины и проверки формы включите JavaScript в
+        браузере.</noscript
+      >
+      <div class="page-title container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="index.html">Главная</a>
+          <span aria-hidden="true">→</span>
+          <span aria-current="page">Контакты</span>
+        </nav>
+        <h1>Контакты</h1>
+        <p>Поможем выбрать лампу и ответим на вопросы о доставке.</p>
+      </div>
+
+      <section class="section section--gray">
+        <div class="contacts container">
+          <article class="contact-card">
+            <h2>Адрес</h2>
+            <p>Москва, ул. Светлая, дом 7</p>
+            <p>Вход со стороны двора.</p>
+          </article>
+          <article class="contact-card">
+            <h2>Телефон и почта</h2>
+            <p><a href="tel:+74951234567">+7 495 123-45-67</a></p>
+            <p><a href="mailto:shop@example.ru">shop@example.ru</a></p>
+          </article>
+          <article class="contact-card">
+            <h2>Время работы</h2>
+            <p>Понедельник-пятница: 10:00-20:00</p>
+            <p>Суббота-воскресенье: 11:00-18:00</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contact-action container">
+          <div>
+            <h2 class="section__title">Хотите заказать лампу?</h2>
+            <p>Оставьте заявку на сайте.</p>
+          </div>
+          <a class="button" href="order.html#order-form"
+            >Перейти к оформлению заявки</a
+          >
+        </div>
+      </section>
+
+      <section class="section" id="feedback">
+        <div class="feedback-layout container">
+          <div>
+            <p class="label">Обратная связь</p>
+            <h2 class="section__title">Задать вопрос</h2>
+            <p>
+              Расскажите, какая лампа вас интересует и что вы хотите уточнить.
+            </p>
+          </div>
+          <div>
+            <dialog
+              open=""
+              class="form-panel"
+              aria-labelledby="feedback-form-title"
+            >
+              <div class="form-panel">
+                <form
+                  class="order-form"
+                  id="feedback-form"
+                  data-validation=""
+                  method="dialog"
+                >
+                  <h2 class="order-form__title" id="feedback-form-title">
+                    Ваш вопрос
+                  </h2>
+                  <div class="order-form__row">
+                    <div class="order-form__field">
+                      <label for="feedback-name">Имя *</label>
+                      <input
+                        id="feedback-name"
+                        name="name"
+                        autocomplete="name"
+                        minlength="2"
+                        required=""
+                      />
+                    </div>
+                    <div class="order-form__field">
+                      <label for="feedback-email">E-mail *</label>
+                      <input
+                        id="feedback-email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        required=""
+                      />
+                    </div>
+                  </div>
+                  <div class="order-form__field">
+                    <label for="feedback-message">Вопрос *</label>
+                    <textarea
+                      id="feedback-message"
+                      name="message"
+                      rows="4"
+                      minlength="10"
+                      maxlength="1000"
+                      required=""
+                    ></textarea>
+                    <small class="field-hint">От 10 до 1000 символов.</small>
+                  </div>
+                  <label class="order-form__checkbox" for="feedback-consent">
+                    <input
+                      id="feedback-consent"
+                      name="consent"
+                      type="checkbox"
+                      required=""
+                    />
+                    Согласен на обработку персональных данных *
+                  </label>
+                  <div class="order-form__actions">
+                    <button class="button" type="submit">
+                      Проверить сообщение
+                    </button>
+                    <button class="button button--outline" type="reset">
+                      Очистить
+                    </button>
+                  </div>
+                  <p class="order-form__note">
+                    Поля со знаком * обязательны. Для связи можно
+                    воспользоваться телефоном или электронной почтой.
+                  </p>
+                  <p class="form-status" role="status" data-form-status=""></p>
+                </form>
+              </div>
+            </dialog>
+          </div>
+        </div>
+      </section>
+      <section class="section section--gray">
+        <div class="container">
+          <h2 class="section__title">Отзывы о сайте</h2>
+          <div class="reviews">
+            <article class="review-card">
+              <p class="review-card__stars">
+                <span aria-hidden="true">★★★★★</span>
+                <span class="visually-hidden">Оценка 5 из 5</span>
+              </p>
+              <h3 class="review-card__author">Анна</h3>
+              <p class="review-card__text">
+                Удобный и понятный сайт. Быстро нашла подходящую лампу и
+                оставила заявку.
+              </p>
+            </article>
+            <article class="review-card">
+              <p class="review-card__stars">
+                <span aria-hidden="true">★★★★☆</span>
+                <span class="visually-hidden">Оценка 4 из 5</span>
+              </p>
+              <h3 class="review-card__author">Михаил</h3>
+              <p class="review-card__text">
+                Понравились фотографии и простое оформление. Хотелось бы увидеть
+                больше моделей.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <div>
+          <strong class="site-footer__logo">СветДом</strong>
+          <p>Настольные лампы для дома, работы и учёбы.</p>
+        </div>
+        <div>
+          <h2 class="site-footer__title">Разделы</h2>
+          <a href="catalog.html">Каталог</a>
+          <a href="order.html">Заявка</a>
+          <a href="index.html#advantages">Преимущества</a>
+        </div>
+        <div>
+          <h2 class="site-footer__title">Связаться</h2>
+          <a href="tel:+74951234567">+7 495 123-45-67</a>
+          <a href="mailto:shop@example.ru">shop@example.ru</a>
+        </div>
+      </div>
+      <div class="site-footer__bottom container">© 2026 СветДом</div>
+    </footer>
+    <a class="back-to-top" href="#main-content" aria-label="Наверх">↑</a>
+
+    <nav
+      class="site-nav site-nav--mobile"
+      aria-label="Мобильная навигация"
+      id="mobile-menu"
+      popover="auto"
+    >
+      <div class="site-nav__heading">
+        <strong>Разделы сайта</strong>
+        <button
+          class="menu-close"
+          type="button"
+          popovertarget="mobile-menu"
+          popovertargetaction="hide"
+        >
+          Закрыть меню
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li>
+          <a class="site-nav__link" href="product.html">Лампа «Лайм»</a>
+        </li>
+        <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+        <li>
+          <a
+            class="site-nav__link site-nav__link--active"
+            href="contacts.html"
+            aria-current="page"
+          >
+            Контакты
+          </a>
+        </li>
+        <li>
+          <a class="site-nav__link" href="cart.html"
+            >Корзина
+            <span data-cart-count="" aria-label="Количество товаров">0</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <p
+      class="shop-status visually-hidden"
+      role="status"
+      data-shop-status=""
+    ></p>
+  </body>
+</html>

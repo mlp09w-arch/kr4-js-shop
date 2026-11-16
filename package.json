@@ -1,0 +1,12 @@
+{
+  "name": "kr4-js-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "СветДом — КР №4. Зависимость нужна только для проверки, сайт работает без npm.",
+  "scripts": {
+    "test": "node tests/browser.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.65.0"
+  }
+}

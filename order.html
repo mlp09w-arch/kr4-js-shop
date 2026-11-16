@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Форма заявки на покупку настольной лампы в магазине СветДом."
+    />
+    <title>Оставить заявку - СветДом</title>
+    <link rel="icon" type="image/webp" href="images/lamp-green-360.webp" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/data.js" defer=""></script>
+    <script src="js/cart.js" defer=""></script>
+    <script src="js/catalog.js" defer=""></script>
+    <script src="js/modal.js" defer=""></script>
+    <script src="js/validation.js" defer=""></script>
+    <script src="js/main.js" defer=""></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html">СветДом</a>
+        <button class="menu-toggle" type="button" popovertarget="mobile-menu">
+          <span aria-hidden="true">☰</span>
+          Меню
+        </button>
+        <nav class="site-nav site-nav--desktop" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="index.html">Главная</a></li>
+            <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+            <li>
+              <a class="site-nav__link" href="product.html">Лампа «Лайм»</a>
+            </li>
+            <li>
+              <a
+                class="site-nav__link site-nav__link--active"
+                href="order.html"
+                aria-current="page"
+              >
+                Заявка
+              </a>
+            </li>
+            <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+            <li>
+              <a class="site-nav__link" href="cart.html"
+                >Корзина
+                <span data-cart-count="" aria-label="Количество товаров"
+                  >0</span
+                ></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <noscript
+        >Для поиска, корзины и проверки формы включите JavaScript в
+        браузере.</noscript
+      >
+      <div class="page-title container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="index.html">Главная</a>
+          <span aria-hidden="true">→</span>
+          <span aria-current="page">Заявка</span>
+        </nav>
+        <h1>Оставить заявку</h1>
+        <p>Выберите лампу и подготовьте данные для заказа.</p>
+      </div>
+
+      <section class="section section--gray">
+        <div class="order-layout container">
+          <dialog open="" class="form-panel" aria-labelledby="order-form-title">
+            <div class="form-panel">
+              <form
+                class="order-form"
+                id="order-form"
+                data-validation=""
+                method="dialog"
+              >
+                <h2 class="order-form__title" id="order-form-title">
+                  Данные для заявки
+                </h2>
+                <div class="order-form__row">
+                  <div class="order-form__field">
+                    <label for="name">Имя *</label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      minlength="2"
+                      placeholder="Иван"
+                      autocomplete="name"
+                      required=""
+                    />
+                  </div>
+                  <div class="order-form__field">
+                    <label for="phone">Телефон *</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      pattern="\+?[0-9 \(\)\-]+"
+                      minlength="10"
+                      maxlength="25"
+                      placeholder="+7 999 000-00-00"
+                      autocomplete="tel"
+                      required=""
+                      title="От 10 до 15 цифр; допускаются пробелы, скобки, дефис и плюс в начале"
+                      aria-describedby="phone-hint"
+                    />
+                    <small class="field-hint" id="phone-hint"
+                      >Например: +7 999 000-00-00.</small
+                    >
+                  </div>
+                </div>
+                <div class="order-form__field">
+                  <label for="email">E-mail *</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="name@example.ru"
+                    autocomplete="email"
+                    required=""
+                  />
+                </div>
+                <div class="order-form__row">
+                  <div class="order-form__field">
+                    <label for="product">Выберите лампу *</label>
+                    <select id="product" name="product" required="">
+                      <option value="">Не выбрана</option>
+                    </select>
+                  </div>
+                  <div class="order-form__field">
+                    <label for="date">Желаемая дата доставки</label>
+                    <input id="date" name="date" type="date" />
+                  </div>
+                </div>
+                <p
+                  class="order-summary"
+                  data-order-summary=""
+                  aria-live="polite"
+                ></p>
+                <div class="order-form__field">
+                  <label for="message">Комментарий</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Например: позвонить после 17:00"
+                    maxlength="1000"
+                  ></textarea>
+                </div>
+                <label class="order-form__checkbox" for="agreement">
+                  <input
+                    id="agreement"
+                    name="agreement"
+                    type="checkbox"
+                    required=""
+                  />
+                  Я согласен на обработку персональных данных *
+                </label>
+                <div class="order-form__actions">
+                  <button class="button" type="submit">Проверить заявку</button>
+                  <button class="button button--outline" type="reset">
+                    Очистить
+                  </button>
+                </div>
+                <p class="order-form__note">
+                  Поля со знаком * обязательны. После проверки свяжитесь с нами
+                  для оформления заказа.
+                </p>
+                <p class="form-status" role="status" data-form-status=""></p>
+              </form>
+            </div>
+          </dialog>
+
+          <aside class="order-info">
+            <h2>Как оформить заказ</h2>
+            <ol>
+              <li>Выберите лампу или добавьте несколько товаров в корзину.</li>
+              <li>Заполните контактные данные.</li>
+              <li>Проверьте данные и позвоните нам для оформления заказа.</li>
+            </ol>
+            <p>
+              <strong>Телефон:</strong>
+              <br />
+              <a href="tel:+74951234567">+7 495 123-45-67</a>
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <div>
+          <strong class="site-footer__logo">СветДом</strong>
+          <p>Настольные лампы для дома, работы и учёбы.</p>
+        </div>
+        <div>
+          <h2 class="site-footer__title">Разделы</h2>
+          <a href="catalog.html">Каталог</a>
+          <a href="product.html">Лампа «Лайм»</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+        <div>
+          <h2 class="site-footer__title">Связаться</h2>
+          <a href="tel:+74951234567">+7 495 123-45-67</a>
+          <a href="mailto:shop@example.ru">shop@example.ru</a>
+        </div>
+      </div>
+      <div class="site-footer__bottom container">© 2026 СветДом</div>
+    </footer>
+    <a class="back-to-top" href="#main-content" aria-label="Наверх">↑</a>
+
+    <nav
+      class="site-nav site-nav--mobile"
+      aria-label="Мобильная навигация"
+      id="mobile-menu"
+      popover="auto"
+    >
+      <div class="site-nav__heading">
+        <strong>Разделы сайта</strong>
+        <button
+          class="menu-close"
+          type="button"
+          popovertarget="mobile-menu"
+          popovertargetaction="hide"
+        >
+          Закрыть меню
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li>
+          <a class="site-nav__link" href="product.html">Лампа «Лайм»</a>
+        </li>
+        <li>
+          <a
+            class="site-nav__link site-nav__link--active"
+            href="order.html"
+            aria-current="page"
+          >
+            Заявка
+          </a>
+        </li>
+        <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        <li>
+          <a class="site-nav__link" href="cart.html"
+            >Корзина
+            <span data-cart-count="" aria-label="Количество товаров">0</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <p
+      class="shop-status visually-hidden"
+      role="status"
+      data-shop-status=""
+    ></p>
+  </body>
+</html>

@@ -1,0 +1,475 @@
+{
+  "testedAt": "2026-11-16T16:12:48.353Z",
+  "environment": "Headless Chromium, local HTTP server",
+  "baseUrl": "http://127.0.0.1:8044/",
+  "total": 93,
+  "passed": 93,
+  "failed": 0,
+  "results": [
+    {
+      "name": "8 generated cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "2 unavailable products cannot be added",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Search ignores case and edge spaces",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Search and category combine",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Empty result action visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reset from empty state restores all products",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Combined filters and descending prices",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Ascending prices",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Alphabetical sorting",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Source order unchanged by sort",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Favorites filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Favorite persists on reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cart badge shows quantities",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cart restores two products",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reduce calculates 3490*2 +5990",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Quantity increase recalculates sum",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Removal updates sum and rows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Order uses cart with quantities",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Empty form shows field errors and focus",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Invalid email and phone rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Valid order shows truthful local success",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Form data displayed as text, no injected image",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "PII not persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reset clears errors and status",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Original reviews preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Contact form local validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage uses shared cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Delivery modal opens",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Escape closes modal and returns focus",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Product 1 matches data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Product 2 matches data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Product 3 matches data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Product 4 matches data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Product 5 matches data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Product 6 matches data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Product 7 matches data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Product 8 matches data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unknown product shows useful state",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: no page overflow at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: images load at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog.html: no page overflow at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog.html: images load at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "product.html: no page overflow at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "product.html: images load at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cart.html: no page overflow at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cart.html: images load at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "order.html: no page overflow at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "order.html: images load at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contacts.html: no page overflow at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contacts.html: images load at 360px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: no page overflow at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: images load at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog.html: no page overflow at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog.html: images load at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "product.html: no page overflow at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "product.html: images load at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cart.html: no page overflow at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cart.html: images load at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "order.html: no page overflow at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "order.html: images load at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contacts.html: no page overflow at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contacts.html: images load at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: no page overflow at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: images load at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog.html: no page overflow at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog.html: images load at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "product.html: no page overflow at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "product.html: images load at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cart.html: no page overflow at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cart.html: images load at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "order.html: no page overflow at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "order.html: images load at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contacts.html: no page overflow at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contacts.html: images load at 1024px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: no page overflow at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: images load at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog.html: no page overflow at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog.html: images load at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "product.html: no page overflow at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "product.html: images load at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cart.html: no page overflow at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cart.html: images load at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "order.html: no page overflow at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "order.html: images load at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contacts.html: no page overflow at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contacts.html: images load at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile menu opens and links to cart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Filter collapses without JS dependency",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Empty cart hides checkout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Broken JSON storage does not crash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Storage schema rejects duplicates, unavailable and invalid items; price trusted from data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Blocked storage retains in-memory cart and warns",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No runtime or console errors across pages",
+      "passed": true,
+      "detail": []
+    }
+  ]
+}

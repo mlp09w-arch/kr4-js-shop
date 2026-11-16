@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Зелёная рабочая настольная лампа Лайм с регулируемым кронштейном."
+    />
+    <title>Лампа «Лайм» - СветДом</title>
+    <link rel="icon" type="image/webp" href="images/lamp-green-360.webp" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/data.js" defer=""></script>
+    <script src="js/cart.js" defer=""></script>
+    <script src="js/catalog.js" defer=""></script>
+    <script src="js/modal.js" defer=""></script>
+    <script src="js/validation.js" defer=""></script>
+    <script src="js/main.js" defer=""></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html">СветДом</a>
+        <button class="menu-toggle" type="button" popovertarget="mobile-menu">
+          <span aria-hidden="true">☰</span>
+          Меню
+        </button>
+        <nav class="site-nav site-nav--desktop" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="index.html">Главная</a></li>
+            <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+            <li>
+              <a
+                class="site-nav__link site-nav__link--active"
+                href="product.html"
+                aria-current="page"
+              >
+                Лампа «Лайм»
+              </a>
+            </li>
+            <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+            <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+            <li>
+              <a class="site-nav__link" href="cart.html"
+                >Корзина
+                <span data-cart-count="" aria-label="Количество товаров"
+                  >0</span
+                ></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <noscript
+        >Для поиска, корзины и проверки формы включите JavaScript в
+        браузере.</noscript
+      >
+      <div class="page-title container">
+        <a href="catalog.html">← Вернуться в каталог</a>
+      </div>
+      <div data-product-detail=""></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <div>
+          <strong class="site-footer__logo">СветДом</strong>
+          <p>Настольные лампы для дома, работы и учёбы.</p>
+        </div>
+        <div>
+          <h2 class="site-footer__title">Разделы</h2>
+          <a href="catalog.html">Каталог</a>
+          <a href="#specifications">Характеристики</a>
+          <a href="order.html">Заявка</a>
+        </div>
+        <div>
+          <h2 class="site-footer__title">Связаться</h2>
+          <a href="tel:+74951234567">+7 495 123-45-67</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+      </div>
+      <div class="site-footer__bottom container">© 2026 СветДом</div>
+    </footer>
+    <a class="back-to-top" href="#main-content" aria-label="Наверх">↑</a>
+
+    <nav
+      class="site-nav site-nav--mobile"
+      aria-label="Мобильная навигация"
+      id="mobile-menu"
+      popover="auto"
+    >
+      <div class="site-nav__heading">
+        <strong>Разделы сайта</strong>
+        <button
+          class="menu-close"
+          type="button"
+          popovertarget="mobile-menu"
+          popovertargetaction="hide"
+        >
+          Закрыть меню
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li>
+          <a
+            class="site-nav__link site-nav__link--active"
+            href="product.html"
+            aria-current="page"
+          >
+            Лампа «Лайм»
+          </a>
+        </li>
+        <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+        <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        <li>
+          <a class="site-nav__link" href="cart.html"
+            >Корзина
+            <span data-cart-count="" aria-label="Количество товаров">0</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <p
+      class="shop-status visually-hidden"
+      role="status"
+      data-shop-status=""
+    ></p>
+  </body>
+</html>
