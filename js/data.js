@@ -68,7 +68,7 @@ const products = [
   },
   {
     id: 11,
-    title: "Янтарь",
+    title: "Лесной уют",
     category: "decor",
     price: 7490,
     isAvailable: true,
