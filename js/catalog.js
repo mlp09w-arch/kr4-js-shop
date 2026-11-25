@@ -58,7 +58,6 @@ function renderCatalog() {
   const sort = document.querySelector("#sort").value;
   const onlyAvailable = document.querySelector("#available").checked;
   const onlyFavorites = document.querySelector("#favorites-only").checked;
-  // Копия сохраняет исходный порядок products после любой сортировки.
   let result = [...products].filter((product) => {
     return (
       product.title.toLocaleLowerCase("ru-RU").includes(query) &&
@@ -91,7 +90,6 @@ function initCatalog() {
       if (event.target.id === "search") renderCatalog();
     });
     form.addEventListener("change", renderCatalog);
-    // reset срабатывает до восстановления стандартных значений полей.
     form.addEventListener("reset", () => {
       requestAnimationFrame(renderCatalog);
     });
