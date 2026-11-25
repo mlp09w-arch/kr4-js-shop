@@ -26,9 +26,6 @@ function writeStorage(key, value) {
     );
   }
 }
-
-// Не доверяем localStorage: берём только известные id и целое количество 1–99.
-// Цена всегда берётся из products, а не из сохранённых данных.
 function restoreCart() {
   const result = [];
   readStorage(CART_KEY).forEach((item) => {
@@ -199,7 +196,6 @@ function renderCart() {
 }
 
 function initCartEvents() {
-  // Делегирование: один обработчик обслуживает в том числе новые карточки.
   document.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-action]");
     if (!button || button.disabled) return;
