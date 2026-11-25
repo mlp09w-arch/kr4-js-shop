@@ -1044,14 +1044,15 @@ p {
   margin: 14px 0 24px;
 }
 
-/* Уведомление располагается выше кнопки «Наверх». */
+/* Справа оставляем место для стрелки «Наверх» и отступа от неё. */
 .shop-status:not(.visually-hidden) {
   position: fixed;
-  right: 16px;
-  bottom: 80px;
+  left: 16px;
+  bottom: 20px;
   margin: 0;
   z-index: 20;
-  max-width: min(440px, calc(100vw - 32px));
+  max-width: min(440px, calc(100% - 96px));
+  overflow-wrap: anywhere;
   padding: 12px 18px;
   color: #fff;
   background: #283b16;
