@@ -1,7 +1,5 @@
 "use strict";
 
-// defer выполняет файлы после разбора HTML, в порядке их подключения.
-// Каждый инициализатор проверяет наличие элементов своей страницы.
 initCatalog();
 renderProductDetail();
 initOrderProducts();
@@ -9,7 +7,6 @@ initValidation();
 initModals();
 initCartEvents();
 updateCartCounters();
-updateFavoriteButtons();
 renderCart();
 
 if (storageProblem) {

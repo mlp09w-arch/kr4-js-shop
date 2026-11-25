@@ -118,7 +118,6 @@ p {
   font-weight: 700;
 }
 
-/* Шапка и навигация */
 .site-header {
   position: sticky;
   top: 0;
@@ -166,7 +165,6 @@ p {
   text-underline-offset: 5px;
 }
 
-/* Кнопки */
 .button {
   display: inline-flex;
   min-height: 44px;
@@ -207,7 +205,6 @@ p {
   color: var(--color-white);
 }
 
-/* Главная страница */
 .hero {
   padding: 48px 0;
   background: #f1f4eb;
@@ -274,7 +271,6 @@ p {
   font-size: 18px;
 }
 
-/* Карточки товаров */
 .product-grid {
   display: grid;
   gap: var(--space-lg);
@@ -359,7 +355,6 @@ p {
   gap: var(--space-sm);
 }
 
-/* Внутренние страницы */
 .page-title {
   padding: 40px 0;
 }
@@ -390,7 +385,6 @@ p {
   color: var(--color-primary-dark);
 }
 
-/* Каталог */
 .catalog {
   display: grid;
   align-items: start;
@@ -449,7 +443,6 @@ p {
   font-weight: 400;
 }
 
-/* Страница товара */
 .product-detail {
   display: grid;
   align-items: center;
@@ -562,7 +555,6 @@ p {
   margin-bottom: 4px;
 }
 
-/* Форма */
 .order-layout {
   display: grid;
   align-items: start;
@@ -657,7 +649,6 @@ p {
   padding-left: 20px;
 }
 
-/* Контакты */
 .contacts {
   display: grid;
   gap: var(--space-lg);
@@ -718,7 +709,6 @@ p {
   color: var(--color-muted);
 }
 
-/* Нативное модальное окно: фокус и Escape обрабатывает браузер. */
 .modal {
   width: min(520px, calc(100% - 32px));
   max-height: calc(100dvh - 32px);
@@ -765,7 +755,6 @@ p {
   background: var(--color-light);
 }
 
-/* Подвал */
 .site-footer {
   padding-top: 40px;
   color: #e3e3e3;
@@ -831,7 +820,6 @@ p {
   background: var(--color-primary-dark);
 }
 
-/* Элементы управления без собственного JavaScript. */
 .text-button {
   display: inline-flex;
   align-items: center;
@@ -939,7 +927,6 @@ p {
   margin: 2px 0 0;
 }
 
-/* Обёртка формы не меняет ширину сетки. */
 .form-panel {
   position: static;
   width: 100%;
@@ -972,7 +959,6 @@ p {
   border: 0;
 }
 
-/* Интерактивные элементы КР №4. */
 [hidden] {
   display: none !important;
 }
@@ -1003,23 +989,6 @@ p {
   color: #615d56;
 }
 
-.favorite-button {
-  display: block;
-  min-height: 44px;
-  margin-top: 12px;
-  padding: 8px 0;
-  color: #435d17;
-  background: transparent;
-  border: 0;
-  text-align: left;
-  font: inherit;
-  cursor: pointer;
-}
-
-.favorite-button[aria-pressed="true"] {
-  font-weight: 700;
-}
-
 .check-label {
   display: flex;
   align-items: center;
@@ -1044,7 +1013,6 @@ p {
   margin: 14px 0 24px;
 }
 
-/* Справа оставляем место для стрелки «Наверх» и отступа от неё. */
 .shop-status:not(.visually-hidden) {
   position: fixed;
   left: 16px;

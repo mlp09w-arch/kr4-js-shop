@@ -1,7 +1,5 @@
 "use strict";
 
-// Общий источник данных для каталога, страницы товара и корзины.
-// Новым моделям даны отдельные id; старые комплекты удалены из каталога.
 const products = [
   {
     id: 1,
@@ -104,7 +102,6 @@ function formatPrice(value) {
   }).format(value);
 }
 
-// Текст всегда добавляем как текст, а не как HTML-разметку.
 function createElement(tag, className = "", text = "") {
   const element = document.createElement(tag);
   if (className) element.classList.add(...className.split(" "));

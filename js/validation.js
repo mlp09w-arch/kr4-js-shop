@@ -138,7 +138,6 @@ function initValidation() {
           ? document.querySelector("[data-order-summary]").textContent
           : "";
       status.textContent = `${name}, ${form.id === "order-form" ? "заявка подготовлена" : "сообщение подготовлено"}. ${summary} Данные проверены, но не отправлены. Для оформления свяжитесь с нами по телефону или почте на странице контактов.`;
-      // Персональные данные не сохраняются в localStorage и не передаются по сети.
     });
     form.addEventListener("reset", () => {
       submitted = false;

@@ -23,7 +23,6 @@ function initModals() {
         event.clientY > bounds.bottom;
       if (event.target === dialog && outside) dialog.close();
     });
-    // Escape закрывает native dialog; событие close возвращает фокус.
     dialog.addEventListener("close", () => opener?.focus());
   });
 }

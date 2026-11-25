@@ -34,15 +34,7 @@ function createProductCard(product) {
   add.disabled = !product.isAvailable;
   add.setAttribute("aria-label", `В корзину: ${product.title}`);
   bottom.append(createElement("strong", "", formatPrice(product.price)), add);
-  content.append(
-    bottom,
-    createActionButton(
-      "favorite",
-      product.id,
-      "♡ В избранное",
-      "favorite-button",
-    ),
-  );
+  content.append(bottom);
   card.append(photoLink, content);
   return card;
 }
@@ -57,13 +49,11 @@ function renderCatalog() {
   const category = document.querySelector("#category").value;
   const sort = document.querySelector("#sort").value;
   const onlyAvailable = document.querySelector("#available").checked;
-  const onlyFavorites = document.querySelector("#favorites-only").checked;
   let result = [...products].filter((product) => {
     return (
       product.title.toLocaleLowerCase("ru-RU").includes(query) &&
       (category === "all" || product.category === category) &&
-      (!onlyAvailable || product.isAvailable) &&
-      (!onlyFavorites || favorites.includes(product.id))
+      (!onlyAvailable || product.isAvailable)
     );
   });
   if (sort === "price-asc") result.sort((a, b) => a.price - b.price);
@@ -74,7 +64,6 @@ function renderCatalog() {
   result.forEach((product) => container.append(createProductCard(product)));
   document.querySelector("[data-results-count]").textContent = result.length;
   document.querySelector("[data-catalog-empty]").hidden = result.length !== 0;
-  updateFavoriteButtons();
 }
 
 function resetFilters() {
@@ -89,7 +78,9 @@ function initCatalog() {
     form.addEventListener("input", (event) => {
       if (event.target.id === "search") renderCatalog();
     });
-    form.addEventListener("change", renderCatalog);
+    form.addEventListener("change", (event) => {
+      if (event.target.id !== "search") renderCatalog();
+    });
     form.addEventListener("reset", () => {
       requestAnimationFrame(renderCatalog);
     });
@@ -152,12 +143,6 @@ function renderProductDetail() {
       product.isAvailable ? "В наличии" : "Нет в наличии",
     ),
     add,
-    createActionButton(
-      "favorite",
-      product.id,
-      "♡ В избранное",
-      "favorite-button",
-    ),
   );
   article.append(photo, content);
   container.append(article);
@@ -197,7 +182,6 @@ function renderProductDetail() {
     ["Стиль", categoryNames[product.category]],
     ["Наличие", product.isAvailable ? "В наличии" : "Нет в наличии"],
   ];
-  // Сохраняем известные характеристики исходной лампы, не придумываем параметры других.
   if (product.image === "lamp-green")
     specs.push(
       ["Материал", "Металл"],

@@ -1,7 +1,6 @@
 "use strict";
 
 const CART_KEY = "svetdom-kr4-cart";
-const FAVORITES_KEY = "svetdom-kr4-favorites";
 let storageProblem = false;
 let announcementTimer;
 
@@ -42,9 +41,6 @@ function restoreCart() {
 }
 
 let cart = restoreCart();
-let favorites = [...new Set(readStorage(FAVORITES_KEY))].filter((id) =>
-  products.some((product) => product.id === id),
-);
 
 function announce(message, persistent = false) {
   const status = document.querySelector("[data-shop-status]");
@@ -94,39 +90,6 @@ function addToCart(id) {
   else cart.push({ productId: id, quantity: 1 });
   saveCart();
   if (!storageProblem) announce(`«${product.title}» добавлена в корзину.`);
-}
-
-function toggleFavorite(id) {
-  if (!products.some((product) => product.id === id)) return;
-  const wasFavorite = favorites.includes(id);
-  favorites = wasFavorite
-    ? favorites.filter((value) => value !== id)
-    : [...favorites, id];
-  writeStorage(FAVORITES_KEY, favorites);
-  updateFavoriteButtons();
-  const onlyFavorites = document.querySelector("#favorites-only");
-  if (onlyFavorites && onlyFavorites.checked) renderCatalog();
-  if (!storageProblem)
-    announce(
-      wasFavorite
-        ? "Товар удалён из избранного."
-        : "Товар добавлен в избранное.",
-    );
-}
-
-function updateFavoriteButtons() {
-  document.querySelectorAll('[data-action="favorite"]').forEach((button) => {
-    const selected = favorites.includes(Number(button.dataset.productId));
-    const product = products.find(
-      (product) => product.id === Number(button.dataset.productId),
-    );
-    button.setAttribute("aria-pressed", String(selected));
-    button.setAttribute(
-      "aria-label",
-      `${selected ? "Удалить из избранного" : "Добавить в избранное"}: ${product.title}`,
-    );
-    button.textContent = selected ? "♥ В избранном" : "♡ В избранное";
-  });
 }
 
 function renderCart() {
@@ -202,7 +165,6 @@ function initCartEvents() {
     const action = button.dataset.action;
     const id = Number(button.dataset.productId);
     if (action === "add-to-cart") addToCart(id);
-    if (action === "favorite") toggleFavorite(id);
     if (["remove", "increase", "decrease", "clear-cart"].includes(action)) {
       const row = cart.find((item) => item.productId === id);
       if (action === "clear-cart") cart = [];
@@ -211,7 +173,6 @@ function initCartEvents() {
       if (action === "increase" && row && row.quantity < 99) row.quantity += 1;
       if (action === "decrease" && row && row.quantity > 1) row.quantity -= 1;
       saveCart();
-      // После перерисовки возвращаем фокус на соответствующую кнопку.
       const nextButton = document.querySelector(
         `[data-cart-items] [data-action="${action}"][data-product-id="${id}"]:not(:disabled)`,
       );

@@ -98,19 +98,6 @@ check(
 );
 await page.locator(".filter__form button[type=reset]").click();
 await page.waitForTimeout(100);
-await page.locator('[data-action=favorite][data-product-id="1"]').click();
-await page.locator("#favorites-only").check();
-check(
-  "Favorites filter",
-  (await page.locator("[data-products] .product-card").count()) === 1,
-);
-await page.reload();
-check(
-  "Favorite persists on reload",
-  (await page
-    .locator('[data-action=favorite][data-product-id="1"]')
-    .getAttribute("aria-pressed")) === "true",
-);
 await page
   .locator('[data-action=add-to-cart][data-product-id="1"]')
   .click({ clickCount: 2 });
@@ -270,17 +257,11 @@ for (const width of [360, 768, 1024, 1440]) {
       () => document.documentElement.scrollWidth > innerWidth + 1,
     );
     check(`${file}: no page overflow at ${width}px`, !overflow);
-    // Изображения за пределами экрана загружаются лениво. Для проверки
-    // файлов явно запускаем загрузку и ждём декодирования, а не таймер.
     await page.locator("img").evaluateAll((images) =>
       Promise.all(
         images.map(async (image) => {
           image.loading = "eager";
-          try {
-            await image.decode();
-          } catch {
-            /* broken проверяется ниже */
-          }
+          await image.decode().catch(() => {});
         }),
       ),
     );
@@ -326,7 +307,6 @@ check(
 );
 await page.evaluate(() => {
   localStorage.setItem("svetdom-kr4-cart", "broken");
-  localStorage.setItem("svetdom-kr4-favorites", "{}");
 });
 await page.reload();
 check(

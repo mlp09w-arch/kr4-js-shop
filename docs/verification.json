@@ -1,9 +1,9 @@
 {
-  "testedAt": "2026-11-16T16:45:03.911Z",
+  "testedAt": "2026-11-25T13:43:00.254Z",
   "environment": "Headless Chromium, local HTTP server",
-  "baseUrl": "http://127.0.0.1:8044/",
-  "total": 93,
-  "passed": 93,
+  "baseUrl": "http://127.0.0.1:8000/",
+  "total": 91,
+  "passed": 91,
   "failed": 0,
   "results": [
     {
@@ -53,16 +53,6 @@
     },
     {
       "name": "Source order unchanged by sort",
-      "passed": true,
-      "detail": ""
-    },
-    {
-      "name": "Favorites filter",
-      "passed": true,
-      "detail": ""
-    },
-    {
-      "name": "Favorite persists on reload",
       "passed": true,
       "detail": ""
     },
